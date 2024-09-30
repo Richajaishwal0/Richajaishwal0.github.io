@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richa Jaishwal - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header class="header bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4">
+        <nav>
+            <ul class="flex justify-around items-center">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#interests" class="nav-link">Interests</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
+    
+
+    <main>
+        <section id="about" class="section-dark about-section">
+            <h2>Welcome</h2>
+         
+            <div class="additional-info">
+                <p>I am passionate about solving complex problems and turning ideas into reality through code. My journey in Computer Science has been filled with learning and collaboration. In my spare time, I enjoy playing badminton, participating in marathons, and engaging in public speaking. I believe in continuous improvement and staying updated with the latest technologies.</p>
+            </div>
+        </section>
+        
+
+        <section id="experience" class="section-dark">
+            <!-- <h2>Current Role and Experience</h2>
+            <p><strong>Role:</strong> Computer Science Enthusiast (Student)</p>
+            <p><strong>Experience:</strong> Focused on Python, Java, and full-stack web development...</p>
+        </section> -->
+<!-- Education Section -->
+<section id="education" class="section-light">
+    <h2>Education</h2>
+    <div class="carousel">
+        <div class="carousel-item active">
+            <div class="carousel-card">
+                <h3>Amrita Vishwa Vidhyapeetham</h3>
+                <p>Bachelor of Technology (B.Tech) in Computer Science</p>
+                <p>CGPA-9 | 10</p>
+                <p>2023 - Present</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-card">
+                <h3>Kantipur Secondary School</h3>
+                <p>High School</p>
+                <p>CGPA-3.67 | 4</p>
+                <p>2021 - 2023</p>
+            </div>
+        </div>
+        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+    </div>
+</section>
+
+<section id="skills" class="section-dark">
+    <h2 style="color:white">Skills</h2>
+    <div class="skill-container">
+        <div class="skill-item">
+            <div class="skill-circle" id="python-circle">
+                <div class="skill-percentage">85%</div>
+            </div>
+            <div class="skill-name">Python</div>
+            <div class="progress">
+                <div class="progress-value" style="width: 85%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-circle" id="java-circle">
+                <div class="skill-percentage">80%</div>
+            </div>
+            <div class="skill-name">Java</div>
+            <div class="progress">
+                <div class="progress-value" style="width: 80%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-circle" id="webdev-circle">
+                <div class="skill-percentage">90%</div>
+            </div>
+            <div class="skill-name">Web Development</div>
+            <div class="progress">
+                <div class="progress-value" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-circle" id="ml-circle">
+                <div class="skill-percentage">60%</div>
+            </div>
+            <div class="skill-name">Machine Learning</div>
+            <div class="progress">
+                <div class="progress-value" style="width: 60%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-details">
+        <button class="skill-btn" onclick="showSkills('languages')">Languages</button>
+        <button class="skill-btn" onclick="showSkills('frameworks')">Frameworks</button>
+        <button class="skill-btn" onclick="showSkills('databases')">Databases</button>
+        <button class="skill-btn" onclick="showSkills('tools')">Tools</button>
+        <button class="skill-btn" onclick="showSkills('problem-solving')">Problem Solving</button>
+    </div>
+    <div id="skills-popup" class="popup">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <div class="popup-content" id="popup-content"></div>
+    </div>
+</section>
+
+<section id="interests" class="bg-blue-50 text-gray-900 py-10">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-blue-600 mb-6">Interests & Projects</h2>
+        
+        <p class="text-lg text-center mb-8" style="color:white">
+            I am passionate about various activities that challenge my mind and body. I enjoy <strong>public speaking</strong>, where I can share ideas and inspire others. 
+            My love for <strong>badminton</strong> keeps me active and competitive, while <strong>dancing</strong> allows me to express myself creatively. 
+            I thrive on <strong>problem-solving</strong>, tackling complex challenges head-on, and participate in <strong>marathon running</strong> to test my limits.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="project-card bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <h3 class="text-2xl font-semibold mb-2 text-blue-600" >AI-Based Voting System</h3>
+                <p style="color:white">The AI-Based Voting System is an innovative platform that enhances the voting experience through the integration of artificial intelligence and modern web technologies. Built using Flask, HTML, and Firebase, it provides secure user registration and real-time analytics on voter participation. The system employs AI algorithms for vote verification, ensuring the integrity of each cast vote and reducing the risk of fraud. With its user-friendly interface and accessibility features, the platform encourages broader participation in the electoral process. Overall, this project significantly improves security and user engagement, fostering trust in the voting system.</p>
+            </div>
+            <div class="project-card bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <h3 class="text-2xl font-semibold mb-2 text-blue-600">Flight Reservation System</h3>
+                <p style="color:white">The Flight Reservation System is a user-friendly application designed to streamline the flight booking process. Developed using Python and Tkinter, the system allows users to search for flights, view available options, and make reservations with ease. By implementing efficient algorithms and an intuitive interface, the application reduces booking time by 40%, significantly enhancing the overall user experience. Additionally, the system maintains a database of flights, ensuring real-time updates and availability. This project exemplifies the integration of technology and usability in travel solutions.</p>
+            </div>
+            <div class="project-card bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <h3 class="text-2xl font-semibold mb-2 text-blue-600">Weather App</h3>
+                <p style="color:white">The Weather App is a dynamic application that provides users with real-time weather updates and forecasts for their desired locations. Utilizing APIs to fetch data, the app ensures accurate and timely information, allowing users to plan their activities accordingly. The sleek interface enhances user experience, with features such as location search, weather alerts, and a visually appealing layout. By increasing accessibility to essential weather information, the app serves as a practical tool for everyday use. This project showcases my ability to leverage APIs and create engaging user experiences.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <footer id="contact" class="section-dark py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-blue-600 mb-4 text-center">Contact Me</h2>
+            <div class="flex flex-col items-center">
+                <p class="text-lg mb-2">
+                    Email: 
+                    <a href="mailto:2023richajaiswal@gmail.com" class="contact-link">2023richajaiswal@gmail.com</a>
+                </p>
+                <p class="text-lg mb-2">
+                    LinkedIn: 
+                    <a href="https://www.linkedin.com/in/richa-jaishwal" target="_blank" class="contact-link">Richa Jaishwal</a>
+                </p>
+                <p class="text-lg mb-2">Phone: <span class="text-blue-400">9361365319</span></p>
+            </div>
+            <div class="mt-6">
+                <p class="text-center text-gray-400">© 2024 Richa Jaishwal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

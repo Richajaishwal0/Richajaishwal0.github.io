@@ -1,0 +1,586 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+/* Dark Mode */
+.section-dark {
+    background-color: #222;
+    color: #f1f1f1;
+}
+
+.section-light {
+    background-color: #2b2b2b;
+    color: #e6e6e6;
+}
+
+/* Header and Navigation */
+.header {
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0; /* Position at the very top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    z-index: 1000; /* Ensure it stays above other content */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    padding: 10px 20px; /* Padding for spacing */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+nav {
+    padding: 10px 0; /* Padding for navigation */
+}
+
+nav ul {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center items */
+    align-items: center; /* Center vertically */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    list-style-type: none; /* Remove default list style */
+}
+
+.nav-link {
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size */
+    padding: 10px 15px; /* Padding for clickable area */
+    position: relative; /* Positioning for hover effects */
+    transition: color 0.3s ease; /* Smooth color transitions */
+}
+
+.nav-link:hover {
+    color: #ffdd57; /* Gold color on hover */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Position below text */
+    width: 0;
+    height: 2px;
+    background-color: #ffdd57; /* Hover underline color */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transitions */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand width on hover */
+    left: 0; /* Align to the left */
+}
+
+.progress-bar {
+    height: 4px; /* Height of the progress bar */
+    background-color: #ffdd57; /* Progress bar color */
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the header */
+    left: 0;
+    transition: width 0.5s ease; /* Smooth transition for width changes */
+}
+
+/* Add some padding to the top of the body or main content to prevent overlap with the fixed header */
+
+
+/* General Section Styles */
+.about-section {
+    position: relative; /* For absolute positioning of background */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 40px 20px; /* Increased padding for larger height */
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Hide overflow for background animation */
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+}
+
+/* Background Animation */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    z-index: 0; /* Place behind content */
+    animation: bgAnimation 5s infinite alternate; /* Background animation */
+}
+
+/* Additional Info Styles */
+.additional-info {
+    margin-top: 20px; /* Space between typing effect and additional info */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    font-size: 1.1em; /* Slightly larger font size */
+    color: #e0e0e0; /* Light gray text color */
+}
+
+/* Button Styles */
+.scroll-btn {
+    background-color: #00ffff;
+    border: none;
+    padding: 12px 24px;
+    color: #2a2d3b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform for hover effect */
+    z-index: 1; /* Bring button in front */
+}
+
+.scroll-btn:hover {
+    background-color: #39b3b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Typing Effect */
+.typing-effect {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em; /* Increased font size */
+    border-right: 2px solid #00ffff; /* Cursor effect */
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide text overflow */
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Keyframes for Animations */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Background Animation Keyframes */
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Skills Section Styles */
+.skill-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.skill-item {
+    text-align: center;
+}
+
+.skill-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #2a2d3b; /* Dark background for the circle */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.skill-circle:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.skill-percentage {
+    position: absolute;
+    font-size: 20px;
+    color: #f1f1f1;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.progress {
+    width: 100%;
+    background-color: #2a2d3b;
+    border-radius: 5px;
+}
+
+.progress-value {
+    height: 10px;
+    background-color: #00ffff;
+    border-radius: 5px;
+    transition: width 0.4s;
+}
+
+.skill-details {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.skill-btn {
+    background-color: #2a2d3b;
+    border: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.skill-btn:hover {
+    background-color: #394052; /* Change background on hover */
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #2a2d3b;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    width: 300px;
+    text-align: center;
+}
+
+/* Progress Level Animation */
+@keyframes progressAnimation {
+    from {
+        background-color: #00ffff;
+        transform: scale(0);
+    }
+    to {
+        background-color: #00ffff;
+        transform: scale(1);
+    }
+}
+
+#python-circle:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50%);
+    background: #00ffff;
+    transform: rotate(calc(360deg * 0.85));
+    transition: transform 0.5s;
+}
+
+#java-circle:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50%);
+    background: #00ffff;
+    transform: rotate(calc(360deg * 0.80));
+    transition: transform 0.5s;
+}
+
+#webdev-circle:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50%);
+    background: #00ffff;
+    transform: rotate(calc(360deg * 0.90));
+    transition: transform 0.5s;
+}
+
+#ml-circle:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: inset(0 0 0 50%);
+    background: #00ffff;
+    transform: rotate(calc(360deg * 0.60));
+    transition: transform 0.5s;
+}
+
+/* Experience Section */
+.section-dark {
+    background-color: #0a192f;
+    padding: 60px 20px;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+#experience h2 {
+    font-size: 2.5rem;
+    color: #00d9ff;
+    margin-bottom: 30px;
+}
+
+.experience-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #112240;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
+}
+
+/* Education Section */
+.section-light {
+    background-color: #f0f4f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#education h2 {
+    font-size: 2.5rem;
+    color: #0a192f;
+    margin-bottom: 30px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-card {
+    background-color: #112240;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: #00d9ff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    color: #00ffff;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Transitions and Animations */
+.carousel-item {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.bentogrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(70,130,180,0.1), rgba(255,255,255,0));
+    z-index: 1;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover:before {
+    transform: scale(1);
+}
+
+.project-card h3, .project-card p {
+    position: relative;
+    z-index: 2;
+}
+/* Interests Section Styles */
+#interests {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #050506; /* Light blue background for the section */
+    color: #1d4ed8; /* Blue color for text */
+    padding: 2.5rem 1rem; /* Padding for spacing */
+    position: relative;
+    overflow: hidden; /* Prevent overflow for better visuals */
+}
+
+#interests h2 {
+    color: #1d4ed8; /* Dark blue color for heading */
+    text-align: center; /* Center the heading */
+    font-size: 2.5rem; /* Increased font size for the heading */
+    margin-bottom: 1.5rem; /* Space below heading */
+}
+
+#interests p {
+    line-height: 1.8; /* Better line height for readability */
+    color: #333333; /* Darker color for paragraph text */
+    text-align: center; /* Center the paragraph text */
+    margin-bottom: 1.5rem; /* Space below paragraph */
+}
+
+#interests .project-card {
+    background: #0a172c;; /* White background for project cards */
+    border-radius: 15px; /* Rounded corners for cards */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 1.5rem; /* Padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+#interests .project-card:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+#interests .project-card h3 {
+    color: #1d4ed8; /* Blue color for project titles */
+    font-size: 1.5rem; /* Font size for project titles */
+    margin-bottom: 0.75rem; /* Space below project title */
+}
+
+#interests .project-card p {
+    color: #555555; /* Gray color for project descriptions */
+    font-size: 1rem; /* Font size for project descriptions */
+}
+
+/* Responsive Design for Project Cards */
+@media (max-width: 768px) {
+    #interests .project-card {
+        margin-bottom: 1.5rem; /* Space between cards on mobile */
+    }
+}
+
+#contact {
+    background-color: #0f0f12; /* Darker background for contrast */
+    box-shadow: 2px 8px 10px black;
+    color: #ffffff; /* White text */
+    position: relative; /* Positioning for animations */
+}
+
+#contact h2 {
+    margin-bottom: 1.5rem; /* Space below the heading */
+    animation: fadeIn 1s ease-in-out; /* Animation for heading */
+}
+
+#contact p {
+    margin: 0.5rem 0; /* Space between paragraphs */
+}
+
+.contact-link {
+    color: #64b5f6; /* Light blue for links */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.contact-link:hover {
+    color: #90caf9; /* Lighter blue on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+.container {
+    max-width: 1200px; /* Responsive width */
+    margin: auto; /* Center the container */
+    padding: 0 1rem; /* Padding for container */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Move slightly up */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End position */
+    }
+}
